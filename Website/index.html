@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <title>GreenFoods</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="active" id="navbar">
+            <a href="#" class="logo">Good<span>Foods</span></a>
+            <ul>
+                <li><a href="#" class="active">Home</a>
+                <li><a href="#" >Menu</a></li>
+                <li><a href="#" >About</a></li>
+                <li><a href="#" >Contact</a></li>
+                </li>
+            </ul>
+            <span class="menuIcon" onclick="menuToogle();"></span>
+        </header>
+        <div class="content">
+            <div class="bannerText" id="slideshowText">
+                <div class="active">
+                    <h2>EAT healthy<br>
+                    Stay healthy</h2>     
+                    <p>If you're eating the right food and keeping fit, 
+                    your body will be strong and help you to cope with stress and also fight illness. 
+                    Eating well and exercising often when you're a teenager will also help you stay in good health later in life.</p> 
+                    <a href="#">Read More</a>            
+                </h2>
+                </div>
+                <div>
+                    <h2>EAT your<br>
+                    Veggies</h2>     
+                    <p>Vegetables are important for human health because of their vitamins, minerals, phytochemical compounds, and dietary fiber content.
+                    Especially antioxidant vitamins (vitamin A, vitamin C, and vitamin E) and dietary fiber content have important roles in human health.</p> 
+                    <a href="#">Read More</a>            
+                </h2>
+                </div><div>
+                    <h2>Good Food<br>
+                    Good mood</h2>     
+                    <p>Good food = Good mood. When we eat well, we feel better (it sort of is that simple). 
+                    And good food choices create a positive self-reinforcing loop—you get to feel good knowing you’re doing something good for yourself. 
+                    Healthy choices empower you to make more healthy choices.</p> 
+                    <a href="#">Read More</a>            
+                </h2>
+                </div>
+            </div>
+            <div class="bannerImg" id="slideshow">
+                <img src="20501.jpg" class="active">
+                <img src="img1.jpg" >
+                <img src="healthy-low-fat-foods-1296x728-feature.jpg" >
+            </div>    
+        </div>
+        <div class="icons">
+            <ul class="sci">
+                <li><a href="#"><img src="facebook-logo.png" ></a></li>
+                <li><a href="#"><img src="twitter.png" ></a></li>
+                <li><a href="#"><img src="instagram-.png" ></a></li>
+            </ul>
+            <ul class="controls">
+                <li><a><img src="left.png" onclick="prevSlide();prevSlideText();"></a></li>
+                <li><a><img src="right.png" onclick="nextSlide();nextSlideText();"></a></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var slideshow = document.getElementById('slideshow');
+        var slides = slideshow.getElementsByTagName('img')
+        var index = 0;
+        
+
+        function nextSlide() {
+            slides[index].classList.remove('active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+        }
+        function prevSlide() {
+            slides[index].classList.remove('active');
+            index = (index - 1 +slides.length) % slides.length;
+            slides[index].classList.add('active');
+        }
+        
+        var slideshowText = document.getElementById('slideshowText');
+        var slidesText = slideshowText.getElementsByTagName('div')
+        var i = 0;
+
+        function nextSlideText() {
+            slidesText[i].classList.remove('active');
+            i = (i + 1) % slidesText.length;
+            slidesText[i].classList.add('active');
+        }
+        function prevSlideText() {
+            slidesText[i].classList.remove('active');
+            i = (i - 1 +slidesText.length) % slidesText.length;
+            slidesText[i].classList.add('active');
+        }
+        function menuToogle() {
+            var nav = document.getElementById('navbar')
+            nav.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>
